@@ -1,0 +1,16 @@
+<div class="manage-city-container">
+    <h2>Manage Cities</h2>
+  
+    <!-- Toggle Buttons -->
+    <div class="button-container">
+      <button class="tab-btn" (click)="showTab('add')">Add City</button>
+      <button class="tab-btn" (click)="showTab('all')">View Cities</button>
+      <button class="tab-btn" (click)="showTab('delete')">Delete City</button>
+    </div>
+  
+    <!-- Display Components -->
+    <app-add-city *ngIf="activeTab === 'add'"></app-add-city>
+    <app-all-cities *ngIf="activeTab === 'all'"></app-all-cities>
+    <app-delete-city *ngIf="activeTab === 'delete'"></app-delete-city>
+  </div>
+  

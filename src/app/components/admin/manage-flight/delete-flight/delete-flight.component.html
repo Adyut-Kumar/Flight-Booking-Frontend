@@ -1,0 +1,9 @@
+<div class="flight-container">
+    <h2>Delete Flight</h2>
+  
+    <input type="text" [(ngModel)]="flightCode" placeholder="Enter Flight Code" class="input-field" />
+    <button (click)="deleteFlight()" class="delete-btn">Delete Flight</button>
+  
+    <p *ngIf="message" class="success-message">{{ message }}</p>
+  </div>
+  

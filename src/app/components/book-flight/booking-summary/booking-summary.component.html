@@ -1,0 +1,43 @@
+
+<div class="container booking-summary-container">
+    <h2 class="text-center">✅ Booking Summary</h2>
+  
+    <!-- ✅ Show loading message before city data loads -->
+    <div *ngIf="loading" class="text-center">
+      <p>⏳ Loading city details...</p>
+    </div>
+  
+    <!-- ✅ Display summary once data is loaded -->
+    <div *ngIf="!loading">
+      <h4>Flight Details</h4>
+      <p><strong>Flight No:</strong> {{ flight.flightNo }}</p>
+      <p><strong>From:</strong> {{ flight.fromCity }}</p>
+      <p><strong>To:</strong> {{ flight.toCity }}</p>
+      <p><strong>Departure:</strong> {{ flight.departureDate }} at {{ flight.departureTime }}</p>
+      <p><strong>Arrival:</strong> {{ flight.arrivalTime }}</p>
+  
+      <h4>Passenger Details</h4>
+      <p><strong>Name:</strong> {{ passenger.name }}</p>
+      <p><strong>Email:</strong> {{ passenger.email }}</p>
+      <p><strong>Seat Number:</strong> {{ passenger.seatNumber }}</p>
+  
+      <!-- ✅ Price Breakdown Section -->
+      <div class="price-breakdown mt-4 p-3 border rounded bg-light">
+        <h4>💰 Price Breakdown</h4>
+        <p><strong>Base Fare:</strong> ₹{{ flight.price }}</p>
+        <p><strong>GST (18%):</strong> ₹{{ gstAmount }}</p>
+        <p><strong>Airport Charges ({{ city.cityName }}):</strong> ₹{{ city.airportCharge }}</p>
+        <hr>
+        <h5><strong>Total Amount:</strong> ₹{{ totalAmount }}</h5>
+      </div>
+  
+      <!-- ✅ Confirm Booking Button -->
+      <button class="btn btn-success w-100 mt-3" (click)="confirmBooking()">Confirm Booking and pay</button>
+    </div>
+  </div>
+  <div class="loading-overlay" *ngIf="isSubmitLoading">
+    <div class="loading-spinner">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p>Processing your booking...</p>
+    </div>
+  </div>

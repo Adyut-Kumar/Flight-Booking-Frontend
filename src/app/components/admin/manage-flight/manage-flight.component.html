@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Manage Flights</h2>
+  
+    <div class="button-group">
+      <button (click)="showComponent('add')" class="btn">Add Flight</button>
+      <button (click)="showComponent('delete')" class="btn">Delete Flight</button>
+    </div>
+  
+    <div class="content">
+      <app-add-flight *ngIf="activeTab === 'add'"></app-add-flight>
+      <app-delete-flight *ngIf="activeTab === 'delete'"></app-delete-flight>
+    </div>
+  </div>
+  

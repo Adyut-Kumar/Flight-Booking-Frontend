@@ -1,0 +1,27 @@
+<div class="admin-container">
+    <!-- Header -->
+    <div class="admin-header">
+      <img src="assets/logo.png" alt="Admin Logo" class="admin-logo">
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  
+    <!-- Card for Admin Actions -->
+    <div class="admin-card">
+      <h1>Admin Dashboard</h1>
+      <p>Welcome! Manage your cities and flights easily.</p>
+  
+      <div class="button-container">
+        <button class="nav-btn" (click)="showComponent('city')">Manage City</button>
+        <button class="nav-btn" (click)="showComponent('flight')">Manage Flight</button>
+        <button class="nav-btn" (click)="showComponent('fare')">Manage fare</button>
+      </div>
+    </div>
+  
+    <!-- Dynamic Components -->
+    <div class="sub-container">
+      <app-manage-city *ngIf="activeComponent === 'city'"></app-manage-city>
+      <app-manage-flight *ngIf="activeComponent === 'flight'"></app-manage-flight>
+      <app-manage-fare   *ngIf="activeComponent === 'fare'"></app-manage-fare>
+    </div>
+  </div>
+  

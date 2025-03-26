@@ -1,0 +1,60 @@
+/* Style the ng-select dropdown */
+ng-select {
+    width: 100%; /* Ensures dropdown takes full width */
+    max-width: 400px; /* Optional: Limits the width */
+    display: block;
+    margin-bottom: 15px; /* Adds spacing between dropdowns */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Style the dropdown panel */
+  .ng-select .ng-dropdown-panel {
+    background-color: white !important; /* White background */
+    color: black; /* Ensures readable text */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Smooth rounded edges */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    max-height: 200px; /* Limits height */
+    overflow-y: auto; /* Enables scrolling */
+  }
+  
+  /* Style each dropdown option */
+  .ng-select .ng-dropdown-panel .ng-option {
+    background-color: white !important;
+    color: black !important;
+    padding: 10px; /* Adds spacing inside options */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* Highlight option on hover */
+  .ng-select .ng-dropdown-panel .ng-option:hover {
+    background-color: #f0f0f0 !important; /* Light gray hover effect */
+  }
+  
+  /* Style the selected item */
+  .ng-select .ng-select-container {
+    border: 1px solid #0f1011; /* Blue border for focus */
+    border-radius: 5px;
+    padding: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Style the dropdown arrow */
+  .ng-select .ng-arrow-wrapper {
+    color: #007bff;
+  }
+  
+  /* Adjust label styling */
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  

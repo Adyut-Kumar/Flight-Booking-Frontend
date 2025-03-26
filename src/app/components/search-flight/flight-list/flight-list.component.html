@@ -1,0 +1,53 @@
+
+<!-- ✅ Show only if there are available flights -->
+ 
+<div *ngIf="flights.length > 0" class="flight-list mt-3">
+  <h3>Available Flights</h3>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Flight ID</th>
+        <th>Flight No</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Departure Date</th>
+        <th>Departure Time</th>
+        <th>Arrival Time</th>
+        <th>Seats Available</th>
+        <!-- Added -->
+        <!-- <th>Fare</th> -->
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <!-- ✅ Loop through flights -->
+
+      <tr *ngFor="let flight of flights">
+        <td>{{ flight.flightId }}</td>
+        <td>{{ flight.flightNo }}</td>
+        <td>{{ flight.fromCity }}</td>
+        <td>{{ flight.toCity }}</td>
+        <td>{{ flight.departureDate }}</td>
+        <td>{{ flight.departureTime }}</td>
+        <td>{{ flight.arrivalTime }}</td>
+        <td>{{ flight.availableSeats }}</td>
+        <!-- Added -->
+        <!-- <td>{{ flight.fare }}</td> -->
+        <td>
+          <button class="btn btn-success btn-sm" [disabled]="flight.availableSeats === 0" (click)="bookFlight(flight)">
+            {{ flight.availableSeats > 0 ? 'Book' : 'Full' }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ✅ Show a message if no flights are available -->
+
+<!-- <div *ngIf="flights.length === 0" class="alert alert-warning mt-3">
+  No flights available for the selected route.
+</div> -->

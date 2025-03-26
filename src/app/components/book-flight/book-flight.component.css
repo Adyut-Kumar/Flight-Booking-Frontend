@@ -1,0 +1,93 @@
+/* ✅ Center the main booking container */
+.book-flight-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ✅ Center the heading and add some spacing */
+  h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Style the loading message */
+  .loading-message {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    animation: fadeIn 1s infinite alternate;
+  }
+  
+  /* ✅ Flight details section */
+  .flight-details {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .flight-details p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .flight-details strong {
+    color: #007bff;
+  }
+  
+  /* ✅ Style the form inputs */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* ✅ Style the booking button */
+  .book-btn {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .book-btn:hover {
+    background: #218838;
+  }
+  
+  /* ✅ Success message styling */
+  .success-message {
+    text-align: center;
+    font-size: 18px;
+    color: #28a745;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #e9f6eb;
+  }
+  
+  /* ✅ Fade-in animation for loading text */
+  @keyframes fadeIn {
+    from {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

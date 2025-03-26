@@ -1,0 +1,32 @@
+<div class="main-container">
+    <div class="city-container">
+      <h3>All Cities</h3>
+      <table *ngIf="cities.length > 0" class="city-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>City Code</th>
+            <th>City Name</th>
+            <th>State</th>
+            <th>Airport Charge</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let city of cities; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ city.cityCode }}</td>
+            <td>{{ city.cityName }}</td>
+            <td>{{ city.state }}</td>
+            <td>{{ city.airportCharge | currency }}</td>
+            <td>
+              <span [ngClass]="{ 'active': city.isActive, 'inactive': !city.isActive }">
+                {{ city.isActive ? 'Active' : 'Inactive' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

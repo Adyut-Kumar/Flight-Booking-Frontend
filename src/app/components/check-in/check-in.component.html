@@ -1,0 +1,38 @@
+<div class="container check-in-container">
+    <h2 class="text-center">✈️ Flight Check-In</h2>
+
+    <div class="form-group">
+        <label for="referenceNumber">Enter Booking Reference:</label>
+        <input 
+            type="text" 
+            id="referenceNumber" 
+            class="form-control" 
+            [(ngModel)]="referenceNumber" 
+            name="referenceNumber"  
+            placeholder="Enter Reference No"
+            required>
+    </div>
+
+    <button class="btn btn-primary w-100 mt-3" (click)="fetchCheckInDetails()">Find Booking</button>
+
+    <!-- Display Check-In Details -->
+    <div *ngIf="bookingDetails" class="check-in-details mt-4">
+        <h3>Check-In Details</h3>
+        <p><strong>Reference No:</strong> {{ bookingDetails.referenceNumber }}</p>
+        <!-- <p><strong>Check-In ID:</strong> {{ bookingDetails.checkInId }}</p> -->
+        <!-- <p><strong>Seat Number:</strong> {{ bookingDetails.seatNumber }}</p> -->
+        <p><strong>Flight:</strong> {{ bookingDetails.totalFare }}</p>
+        <app-passenger-details [passenger]="bookingDetails.passengers[0]"></app-passenger-details>
+
+
+        <button class="btn btn-success w-100 mt-3" (click)="confirmCheckIn()">Confirm Check-In</button>
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="checkInConfirmed" class="alert alert-success mt-4">
+        ✅ Check-In Successful! Your seat has been assigned.
+        <button class="btn btn-info w-100 mt-3" (click)="goHome()">Go Home</button>
+    </div>
+</div>
+<app-checkin-details *ngIf="checkInResults" [checkInResults]="checkInResults"></app-checkin-details>
+

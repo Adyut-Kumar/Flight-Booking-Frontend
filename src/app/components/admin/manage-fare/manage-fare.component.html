@@ -1,0 +1,16 @@
+<div class="manage-fare-container">
+    <h2>Manage Fare</h2>
+    
+    <!-- Navigation Buttons -->
+    <div class="button-container">
+      <button class="nav-btn" (click)="showComponent('addFare')">Add Fare</button>
+      <button class="nav-btn" (click)="showComponent('removeFare')">Remove Fare</button>
+    </div>
+  
+    <!-- Dynamic Subcomponents -->
+    <div class="sub-container">
+      <app-add-fare *ngIf="activeComponent === 'addFare'"></app-add-fare>
+      <app-remove-fare *ngIf="activeComponent === 'removeFare'"></app-remove-fare>
+    </div>
+  </div>
+  

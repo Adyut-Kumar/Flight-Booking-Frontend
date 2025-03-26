@@ -1,0 +1,19 @@
+<div class="container final-confirmation-container text-center">
+    <h2 class="text-success">🎉 Booking Confirmed!</h2>
+    
+    <div class="confirmation-details mt-4 p-3 border rounded bg-light">
+      <h4>Your Booking Reference Number:</h4>
+      <p class="ref-number">{{ referenceNumber }}</p>
+  
+      <h5 class="text-primary">✅ Status: PAID</h5>
+  
+      <p class="instructions mt-3">
+        Please **save this reference number** for check-in later. You will need it at the airport.
+      </p>
+  
+      <p class="text-muted">For any assistance, contact customer support.</p>
+    </div>
+  
+    <button class="btn btn-primary mt-4" (click)="goHome()" >🏠 Go to Home</button>
+  </div>
+  

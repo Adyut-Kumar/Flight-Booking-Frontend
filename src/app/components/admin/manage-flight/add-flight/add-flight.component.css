@@ -1,0 +1,186 @@
+/* ✅ Flight Form Container */
+ng-select {
+    width: 100%; /* Ensures dropdown takes full width */
+    max-width: 300px; /* Adjust as per requirement */
+  }
+  .dropdown-menu {
+    z-index: 1050 !important;
+  }
+  
+  .ng-select .ng-dropdown-panel {
+    position: absolute !important; /* Ensures dropdown is placed properly */
+    z-index: 1050 !important; /* Ensures dropdown appears above other elements */
+    max-height: 200px; /* Prevents dropdown from being too long */
+    overflow-y: auto; /* Allows scrolling */
+  }
+  .ng-select .ng-dropdown-panel {
+    background-color: white !important; /* Set background color */
+    color: black; /* Set text color for better visibility */
+    position: absolute !important;
+    z-index: 1050 !important;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc; /* Optional: Add border for better visibility */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  }
+  
+  .ng-select .ng-dropdown-panel .ng-option {
+    background-color: white !important; /* Ensures each option has a white background */
+    color: black !important; /* Ensures text remains visible */
+  }
+  
+  .ng-select .ng-dropdown-panel .ng-option:hover {
+    background-color: #f0f0f0 !important; /* Light gray hover effect */
+  }
+  
+.flight-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* ✅ Title Styling */
+  .flight-container h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Input Fields & Labels */
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  input,
+  ng-select {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* ✅ Styling for Input Fields */
+  input {
+    height: 40px;
+    padding: 8px 12px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  input:focus {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 5px rgba(0, 91, 187, 0.5);
+    outline: none;
+  }
+  
+  /* ✅ Styling the Select Field */
+  ng-select .ng-select-container {
+    height: 45px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+    background-color: #fff;
+    font-size: 14px;
+  }
+  
+  /* ✅ Add Hover and Focus Effects */
+  ng-select.ng-select-focused .ng-select-container {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 5px rgba(0, 91, 187, 0.5);
+  }
+  
+  /* ✅ Dropdown Positioning */
+  ng-dropdown-panel {
+    position: absolute;
+    width: 100%;
+    top: 100%; /* ✅ Ensures dropdown appears directly below the select field */
+    left: 0;
+    z-index: 999; /* ✅ Ensures dropdown appears above other elements */
+    background-color: #fff; /* ✅ White background */
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+  }
+  
+  /* ✅ Dropdown Options Styling */
+  ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+  }
+  
+  /* ✅ Highlight Selected Option */
+  ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* ✅ Hover Effect for Dropdown */
+  ng-dropdown-panel .ng-dropdown-panel-items .ng-option:hover {
+    background-color: #f0f8ff;
+    color: #007bff;
+  }
+  
+  /* ✅ Disabled Option (for already selected city) */
+  .ng-option-disabled {
+    background-color: #f0f0f0 !important;
+    color: #999 !important;
+    cursor: not-allowed;
+  }
+  
+  /* ✅ Button Styling */
+  .add-btn {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .add-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* ✅ Loading Spinner */
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .loading-spinner div {
+    width: 25px;
+    height: 25px;
+    border: 3px solid transparent;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

@@ -1,0 +1,23 @@
+.manage-fare-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .nav-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #3f3cff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .nav-btn:hover {
+    background-color: #5a57f8;
+  }
+  

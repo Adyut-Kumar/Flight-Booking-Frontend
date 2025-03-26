@@ -1,0 +1,72 @@
+<div class="container search-flight-container">
+    <h2 class="text-center">✈️ Search Flights</h2>
+  
+    <div class="row">
+      <div class="col-md-4">
+        <label>From:</label>
+        <ng-select 
+  [items]="fromCities"
+  bindLabel="cityName"
+  placeholder="Select From City"
+  [(ngModel)]="selectedFlight.fromCity"
+  (change)="onFromCityChange()"
+  [searchable]="true">
+</ng-select>
+        <!-- <input type="text" class="form-control" [(ngModel)]="from" placeholder="Enter departure city"> -->
+      </div>
+      <div class="col-md-4">
+        <label>To:</label>
+        
+<ng-select 
+  [items]="toCities"
+  bindLabel="cityName"
+  placeholder="Select To City"
+  [(ngModel)]="selectedFlight.toCity"
+  (change)="onToCityChange()"
+  [searchable]="true">
+</ng-select>
+        <!-- <input type="text" class="form-control" [(ngModel)]="to" placeholder="Enter destination city"> -->
+      </div>
+
+      <!-- <label for="fromCity">From City</label> -->
+<!-- <ng-select 
+  [items]="fromCities"
+  bindLabel="cityName"
+  placeholder="Select From City"
+  [(ngModel)]="selectedFlight.fromCity"
+  (change)="onFromCityChange()"
+  [searchable]="true">
+</ng-select> -->
+
+<!-- <label for="toCity">To City</label> -->
+<!-- <ng-select 
+  [items]="toCities"
+  bindLabel="cityName"
+  placeholder="Select To City"
+  [(ngModel)]="selectedFlight.toCity"
+  (change)="onToCityChange()"
+  [searchable]="true">
+</ng-select> -->
+
+      <div class="col-md-4">
+        <label>Date:</label>
+        <input type="date" class="form-control" [(ngModel)]="date" required min="{{today}}">
+      </div>
+    </div>
+  
+    <button class="btn btn-primary w-100 mt-3" (click)="searchFlights()">Search</button>
+  
+    <div *ngIf="loading" class="text-center mt-3">
+      <p>Loading flights... ✈️</p>
+    </div>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  
+  
+    <app-flight-list [flights]="flights" (bookFlightEvent)="handleBookFlight($event)"></app-flight-list>
+            
+    
+  </div>
+  

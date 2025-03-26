@@ -1,0 +1,65 @@
+<div class="add-flight-container">
+    <h3>Add Flight</h3>
+    
+    <label>Flight No:</label>
+    <input type="text" [(ngModel)]="flight.flightNo" placeholder="Enter Flight No" required/>
+  
+    <!-- <label>From City:</label>
+    <input type="text" [(ngModel)]="flight.fromCity" placeholder="Enter Source City" required/>
+  
+    <label>To City:</label>
+    <input type="text" [(ngModel)]="flight.toCity" placeholder="Enter Destination City" required/> -->
+    <!-- <label for="fromCity">From City:</label>
+<select id="fromCity" [(ngModel)]="flight.fromCity">
+  <option value="" disabled selected>Select City</option>
+  <option *ngFor="let city of cities" [value]="city.cityCode">{{ city.cityName }}</option>
+</select>
+
+<label for="toCity">To City:</label>
+<select id="toCity" [(ngModel)]="flight.toCity">
+  <option value="" disabled selected>Select City</option>
+  <option *ngFor="let city of cities" [value]="city.cityCode">{{ city.cityName }}</option>
+</select> -->
+
+ <!-- From City Selection -->
+ <label for="fromCity">From City</label>
+<ng-select 
+  [items]="fromCities"
+  bindLabel="cityName"
+  placeholder="Select From City"
+  [(ngModel)]="selectedFlight.fromCity"
+  (change)="onFromCityChange()"
+  [searchable]="true">
+</ng-select>
+
+<label for="toCity">To City</label>
+<ng-select 
+  [items]="toCities"
+  bindLabel="cityName"
+  placeholder="Select To City"
+  [(ngModel)]="selectedFlight.toCity"
+  (change)="onToCityChange()"
+  [searchable]="true">
+</ng-select>
+
+
+
+
+  
+    <label>Departure Date:</label>
+    <input type="date" [(ngModel)]="flight.departureDate" required/>
+  
+    <label>Departure Time:</label>
+    <input type="time" [(ngModel)]="flight.departureTime" required/>
+  
+    <label>Arrival Time:</label>
+    <input type="time" [(ngModel)]="flight.arrivalTime" required/>
+  
+    <label>Available Seats:</label>
+    <input type="number" [(ngModel)]="flight.availableSeats" min="1" placeholder="Enter Seat Count" required/>
+  
+    <button (click)="addFlight()" [disabled]="isLoading">Add Flight</button>
+    
+    <div *ngIf="isLoading" class="loading">Adding flight...</div>
+  </div>
+  

@@ -1,0 +1,110 @@
+
+
+/* Preventing the body from blocking scrolling */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+  
+    min-height: 100vh;
+    background: linear-gradient(to right, #faf7fd, #b6ccf1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Header */
+  .admin-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: absolute;
+    top: 0;
+  }
+  
+  .admin-logo {
+    width: 150px;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #cc0000;
+  }
+  
+  /* Card Styling */
+  .admin-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    margin-top: 100px; 
+    
+  }
+  
+  .admin-card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .admin-card p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Buttons */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .nav-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .nav-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Dynamic Subcomponent Styling */
+  .sub-container {
+    width: 90%;
+    max-width: 90vw;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -1,0 +1,16 @@
+<div  class="checkin-overlay">
+    <div class="checkin-container">
+      <h2>✅ Check-In Confirmed!</h2>
+  
+      <div  *ngIf="checkInResults"  class="checkin-card">
+        <p><strong>Check-In ID:</strong> {{ checkInResults.checkInId }}</p>
+        <p><strong>Reference Number:</strong> {{ checkInResults.referenceNumber }}</p>
+        <p><strong>Passenger Name:</strong> {{ checkInResults.passengerName }}</p>
+        <p><strong>Seat Number:</strong> {{ checkInResults.seatNumber }}</p>
+        <p><strong>Check-In Time:</strong> {{ checkInResults.checkInTime }}</p>
+      </div>
+  
+      <button (click)="close()">Close</button>
+    </div>
+  </div>
+  
