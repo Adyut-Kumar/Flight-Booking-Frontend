@@ -4,23 +4,23 @@ ng-select {
     max-width: 300px; /* Adjust as per requirement */
   }
   .dropdown-menu {
-    z-index: 1050 !important;
+    z-index: 10 !important;
   }
   
   .ng-select .ng-dropdown-panel {
     position: absolute !important; /* Ensures dropdown is placed properly */
-    z-index: 1050 !important; /* Ensures dropdown appears above other elements */
+    z-index: 10 !important; /* Ensures dropdown appears above other elements */
     max-height: 200px; /* Prevents dropdown from being too long */
-    overflow-y: auto; /* Allows scrolling */
+  /*  overflow-y: auto;  Allows scrolling */
   }
   .ng-select .ng-dropdown-panel {
     background-color: white !important; /* Set background color */
     color: black; /* Set text color for better visibility */
     position: absolute !important;
-    z-index: 1050 !important;
+    z-index: 10 !important;
     max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc; /* Optional: Add border for better visibility */
+    /* overflow-y: auto; */
+    border: 1px solid #807e7e; /* Optional: Add border for better visibility */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
   }
   
@@ -33,13 +33,13 @@ ng-select {
     background-color: #f0f0f0 !important; /* Light gray hover effect */
   }
   
-.flight-container {
-    width: 50%;
+.add-flight-container {
+    width: 100%;
     margin: 40px auto;
     padding: 20px;
     background: #ffffff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px solid green; */
     text-align: center;
   }
   
@@ -71,7 +71,7 @@ ng-select {
   input {
     height: 40px;
     padding: 8px 12px;
-    border: 2px solid #007bff;
+    border: 2px solid #c4c4c4;
     border-radius: 5px;
     font-size: 14px;
     transition: 0.3s ease-in-out;
@@ -105,7 +105,7 @@ ng-select {
     width: 100%;
     top: 100%; /* ✅ Ensures dropdown appears directly below the select field */
     left: 0;
-    z-index: 999; /* ✅ Ensures dropdown appears above other elements */
+    z-index: 9; /* ✅ Ensures dropdown appears above other elements */
     background-color: #fff; /* ✅ White background */
     border: 1px solid #007bff;
     border-radius: 5px;
@@ -182,5 +182,20 @@ ng-select {
     to {
       transform: rotate(360deg);
     }
+  }
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #061d35;
+    color: white;
+  }
+  
+  .btn:hover {
+    background: #0056b3;
   }
   

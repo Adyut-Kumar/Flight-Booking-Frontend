@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RemoveFareComponent } from './remove-fare.component';
+import { UpdateFareComponent } from './update-fare.component';
 
-describe('RemoveFareComponent', () => {
-  let component: RemoveFareComponent;
-  let fixture: ComponentFixture<RemoveFareComponent>;
+describe('UpdateFareComponent', () => {
+  let component: UpdateFareComponent;
+  let fixture: ComponentFixture<UpdateFareComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RemoveFareComponent]
+      imports: [UpdateFareComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RemoveFareComponent);
+    fixture = TestBed.createComponent(UpdateFareComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

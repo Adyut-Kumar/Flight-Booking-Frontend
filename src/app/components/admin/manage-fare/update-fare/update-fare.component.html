@@ -1,0 +1,30 @@
+<div class="update-fare-container">
+    <h2>Update Fare</h2>
+
+    <div class="form-group">
+        <label>Flight ID:</label>
+        <input type="number" [(ngModel)]="fareData.flightId" class="form-control" placeholder="Enter Fare ID">
+    </div>
+
+    <!-- <div class="form-group" >
+        <label>Flight ID:</label>
+        <input type="number" [(ngModel)]="fareData.flightId" class="form-control" placeholder="Enter Flight ID">
+    </div> -->
+
+    <div class="form-group">
+        <label>Base Price:</label>
+        <input type="number" [(ngModel)]="fareData.basePrice" class="form-control" placeholder="Enter Base Price">
+    </div>
+
+    <div class="form-group">
+        <label>Convenience Fee:</label>
+        <input type="number" [(ngModel)]="fareData.convenienceFee" class="form-control" placeholder="Enter Convenience Fee">
+    </div>
+
+    <button class="btn-success" (click)="updateFare()">
+        <span *ngIf="isLoading" class="loaderr">🔄</span>
+        <span *ngIf="!isLoading">Update Fare</span>
+    </button>
+
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>

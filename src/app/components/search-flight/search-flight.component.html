@@ -1,3 +1,8 @@
+<nav class="navbar">
+  <a href="/"><img src="/logo.png" alt="Udaan Mitra Logo" class="navbar-logo">Home</a>
+  <button class="nav-button" (click)="loginAsAdmin()">Admin Login</button>
+</nav>
+
 <div class="container search-flight-container">
     <h2 class="text-center">✈️ Search Flights</h2>
   
@@ -28,25 +33,7 @@
         <!-- <input type="text" class="form-control" [(ngModel)]="to" placeholder="Enter destination city"> -->
       </div>
 
-      <!-- <label for="fromCity">From City</label> -->
-<!-- <ng-select 
-  [items]="fromCities"
-  bindLabel="cityName"
-  placeholder="Select From City"
-  [(ngModel)]="selectedFlight.fromCity"
-  (change)="onFromCityChange()"
-  [searchable]="true">
-</ng-select> -->
 
-<!-- <label for="toCity">To City</label> -->
-<!-- <ng-select 
-  [items]="toCities"
-  bindLabel="cityName"
-  placeholder="Select To City"
-  [(ngModel)]="selectedFlight.toCity"
-  (change)="onToCityChange()"
-  [searchable]="true">
-</ng-select> -->
 
       <div class="col-md-4">
         <label>Date:</label>

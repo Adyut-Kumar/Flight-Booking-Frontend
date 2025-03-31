@@ -22,6 +22,7 @@ export class BookFlightComponent implements OnInit {
   priceloading:boolean = true;  
   bookingSuccess: boolean = false;
   bookingDetailsAdded: boolean = false;
+  showErr:boolean=false;
 
   passenger: Passenger = {
     name: '',
@@ -38,6 +39,8 @@ export class BookFlightComponent implements OnInit {
     private fareService: FareService
   ) {}
 
+  
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.flightId = params['flightId'];
@@ -49,7 +52,10 @@ export class BookFlightComponent implements OnInit {
   }
 
   /** ✅ Fetch Flight Details */
- 
+  validateEmail(email: string): boolean {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
   
   //uncomment below
   getFlightFare(){
@@ -68,24 +74,13 @@ export class BookFlightComponent implements OnInit {
       }
     );
   }
+  loginAsAdmin() {
+    this.router.navigate(['/admin/login']);
+  }
   getFlightDetails() {
-   //demmo
-  //  setTimeout(() => {
-  //   const demoFlight: Flight = {
-  //     flightNumber: 'AI203',
-  //     airline: 'Air India',
-  //     departureTime: '2024-04-01T08:30:00',
-  //     arrivalTime: '2024-04-01T10:45:00',
-  //     price: 4999,
-  //     from: 'New Delhi',
-  //     to: 'Mumbai',
-  //     date: '2024-04-01',
-  //     flightId: 101
-  //   };
+  
 
-  //   this.flight = demoFlight;  // ✅ Assign flight data after 3 seconds
-  //   this.loading = false;  // ✅ Hide loading state
-  // }, 3000);
+  
     this.flightService.getFlightById(this.flightId).subscribe(
       (data) => {
         this.flight = data;
@@ -99,23 +94,21 @@ export class BookFlightComponent implements OnInit {
     );
    }
 
-  /** ✅ Simulate Seat Assignment */
-  // assignSeat() {
-  //   const seatLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
-  //   const row = Math.floor(Math.random() * 30) + 1;
-  //   const letter = seatLetters[Math.floor(Math.random() * seatLetters.length)];
-  //   this.passenger.seatNumber = `${row}${letter}`;
-  // }
-
   /** ✅ Confirm Booking */
   Booking() {
+    
     if (!this.passenger.name || !this.passenger.email ) {
       alert('Please fill all required fields.');
+      return;
+    }
+    if (!this.validateEmail(this.passenger.email)) {
+      this.showErr=true;
       return;
     }
 
     //this.assignSeat(); // ✅ Auto-assign seat
     //alert(`Booking confirmed for ${this.passenger.name}! Seat: ${this.passenger.seatNumber}`);
     this.bookingDetailsAdded = true;
+    this.showErr=false;
   }
 }

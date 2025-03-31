@@ -26,7 +26,10 @@ export class AddFlightComponent {
     isActive: true
   };
   isLoading = false;
+
+
   message = '';
+  today:string='';
     cities: string[] = []; // Original city list
     fromCities: string[] = []; // Filtered list for "From City"
     toCities: string[] = []; // Filtered list for "To City"
@@ -41,7 +44,7 @@ export class AddFlightComponent {
 
   ngOnInit() {
     this.loadCities();
-
+this.today = new Date().toISOString().split('T')[0];
    
   }
 
@@ -58,34 +61,7 @@ export class AddFlightComponent {
     );
   }
   
-  // onFromCityChange() {
-  //   // ✅ Filter out the selected "From City" from "To City" dropdown
-  //   this.filteredCities = this.cities.filter(city => city.cityCode !== this.flight.fromCity);
-  //   // ✅ Reset "To City" if it was previously selected and now filtered out
-  //   if (this.fligh.toCity === this.flight.fromCity) {
-  //     this.fligh.toCity = null;
-  //   }
-  // }
 
-  // onFromCityChange() {
-  //   // ✅ Remove selected "From City" from "To City" options
-  //   this.toCities = this.cities.filter(city => city.cityCode !== this.flight.fromCity);
-
-  //   // ✅ If "To City" was previously selected and now invalid, reset it
-  //   if (this.flight.toCity === this.flight.fromCity) {
-  //     this.fligh.toCity = null;
-  //   }
-  // }
-
-  // onToCityChange() {
-  //   // ✅ Remove selected "To City" from "From City" options
-  //   this.filteredCities = this.cities.filter(city => city.cityCode !== this.flight.toCity);
-
-  //   // ✅ If "From City" was previously selected and now invalid, reset it
-  //   if (this.flight.fromCity === this.flight.toCity) {
-  //     this.fligh.fromCity = null;
-  //   }
-  // }
 
   onFromCityChange() {
     if (this.selectedFlight.fromCity) {
@@ -113,7 +89,7 @@ export class AddFlightComponent {
   
   
   addFlight() {
-    if (!this.selectedFlight.fromCity || !this.selectedFlight.toCity || !this.flight.flightNo || !this.flight.departureDate) {
+    if (!this.selectedFlight.fromCity || !this.selectedFlight.toCity || !this.flight.flightNo || !this.flight.departureDate || !this.flight.arrivalTime || !this.flight.availableSeats ) {
       alert('Please fill in all required fields.');
       return;
     }

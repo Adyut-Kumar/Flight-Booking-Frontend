@@ -1,8 +1,19 @@
-<div class="container check-in-container">
+<div class="par-conatainer">
+    
+
+<div class=" check-in-container">
+    <nav class="navbar">
+        <a href="/" class="nav-home">
+            <img src="/logo.png" alt="Udaan Mitra Logo" class="navbar-logo"> Home
+        </a>
+        <button class="nav-button" (click)="loginAsAdmin()">Admin Login</button>
+    </nav>
+    <div class="ccn">
+
     <h2 class="text-center">✈️ Flight Check-In</h2>
 
     <div class="form-group">
-        <label for="referenceNumber">Enter Booking Reference:</label>
+        <label for="referenceNumber">Booking Reference:</label>
         <input 
             type="text" 
             id="referenceNumber" 
@@ -13,26 +24,33 @@
             required>
     </div>
 
-    <button class="btn btn-primary w-100 mt-3" (click)="fetchCheckInDetails()">Find Booking</button>
+    <button class="btn-primary" (click)="fetchCheckInDetails()">
+        <span *ngIf="!isget">Find Booking</span>
+           <span *ngIf="isget"><span  class="spinner"></span>Loading</span>
+    </button>
 
     <!-- Display Check-In Details -->
-    <div *ngIf="bookingDetails" class="check-in-details mt-4">
+    <div *ngIf="bookingDetails" class="check-in-details">
         <h3>Check-In Details</h3>
         <p><strong>Reference No:</strong> {{ bookingDetails.referenceNumber }}</p>
-        <!-- <p><strong>Check-In ID:</strong> {{ bookingDetails.checkInId }}</p> -->
-        <!-- <p><strong>Seat Number:</strong> {{ bookingDetails.seatNumber }}</p> -->
-        <p><strong>Flight:</strong> {{ bookingDetails.totalFare }}</p>
+        <p><strong>Flight Fare:</strong> ₹{{ bookingDetails.totalFare }}</p>
+        
         <app-passenger-details [passenger]="bookingDetails.passengers[0]"></app-passenger-details>
 
-
-        <button class="btn btn-success w-100 mt-3" (click)="confirmCheckIn()">Confirm Check-In</button>
+        <button class="btn-success" (click)="confirmCheckIn()">
+            <span *ngIf="!isLoading">Confirm Check-In</span>
+           <span *ngIf="isLoading"><span  class="spinner"></span> Checking in...</span>
+        </button>
     </div>
 
     <!-- Success Message -->
-    <div *ngIf="checkInConfirmed" class="alert alert-success mt-4">
+    <div *ngIf="checkInConfirmed" class="success-message">
         ✅ Check-In Successful! Your seat has been assigned.
-        <button class="btn btn-info w-100 mt-3" (click)="goHome()">Go Home</button>
+        <button class="btn-info" (click)="goHome()">Go Home</button>
     </div>
 </div>
-<app-checkin-details *ngIf="checkInResults" [checkInResults]="checkInResults"></app-checkin-details>
 
+</div>
+
+<app-checkin-details *ngIf="checkInResults" [checkInResults]="checkInResults"></app-checkin-details>
+</div>

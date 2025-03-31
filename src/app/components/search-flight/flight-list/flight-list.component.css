@@ -1,0 +1,91 @@
+.flight-list {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto; /* Enables horizontal scroll on small screens */
+}
+
+h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    white-space: nowrap; /* Prevents text wrapping */
+}
+
+.table thead {
+    background: #007bff;
+    color: white;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background: #f8f9fa;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Book Button */
+.btn-success {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}
+
+/* Disable button style */
+.btn[disabled] {
+    background: gray;
+    cursor: not-allowed;
+}
+
+/* Alert Message */
+.alert-warning {
+    text-align: center;
+    padding: 10px;
+    background: #ffc107;
+    color: #333;
+    border-radius: 5px;
+}

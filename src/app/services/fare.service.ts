@@ -20,4 +20,15 @@ export class FareService {
     return this.http.post(`${this.apiUrl}/add-fare`, fare, { responseType: 'text' });
    
   }
+  getFareById(fareId: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${fareId}`);
+  }
+
+  // updateFare(fareId: string, fareData: any): Observable<any> {
+  //   return this.http.put(`${this.apiUrl}/${fareId}`, fareData);
+  // }
+  updateFare(fareData: any): Observable<any> {
+    // /api/Fare/update-fare-by-flight/{flightId}
+    return this.http.put(`${this.apiUrl}/update-fare-by-flight/${fareData.flightId}`, fareData);
+  }
 }

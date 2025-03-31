@@ -18,7 +18,7 @@
             <td>{{ city.cityCode }}</td>
             <td>{{ city.cityName }}</td>
             <td>{{ city.state }}</td>
-            <td>{{ city.airportCharge | currency }}</td>
+            <td>₹{{ city.airportCharge}}</td>
             <td>
               <span [ngClass]="{ 'active': city.isActive, 'inactive': !city.isActive }">
                 {{ city.isActive ? 'Active' : 'Inactive' }}

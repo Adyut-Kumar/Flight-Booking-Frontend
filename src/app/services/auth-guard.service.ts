@@ -1,6 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { AuthService } from './auth.service';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,18 +11,39 @@ export class AuthGuardService implements CanActivate {
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  canActivate(): boolean {
+  canActivate(): Observable<boolean> {
     const token = this.authService.getToken();
-    console.log('AuthGuard: Checking token for Admin Home:', token);
 
     if (!token) {
-      this.router.navigate(['/admin/login']); // ✅ Redirect to login if no token
-      return false; // ❌ Do not check again, prevent infinite loop
+      console.warn("No token found. Redirecting to login...");
+      this.router.navigate(['/admin/login']);
+      return of(false);
     }
-    //check for token validation 
-    console.log("validation search ....");
-   
-    
-    return true; // ✅ Allow access if token is present
+
+    console.log("Token found in storage:", token);
+
+    return this.authService.validateToken(token).pipe(
+      map(response => {
+        console.log("Token validation response:", response);
+
+        if (response?.user) {
+          return true; // ✅ Allow access if user exists
+        }
+
+        console.warn("Invalid token. Redirecting to login...");
+        this.router.navigate(['/admin/login']);
+        return false;
+      }),
+      catchError(error => {
+        console.error("Token validation failed:", error);
+
+        if (error.status === 401) {
+          console.warn("Unauthorized. Redirecting to login...");
+        }
+
+        this.router.navigate(['/admin/login']);
+        return of(false);
+      })
+    );
   }
 }

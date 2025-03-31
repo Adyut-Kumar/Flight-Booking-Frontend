@@ -7,6 +7,23 @@
     align-items: center;
     background: linear-gradient(135deg, #cddff1, #eee4fd);
   }
+  /* Remove all styling from anchor tags and set color to black */
+a {
+  
+  all: unset; /* Removes all default styles */
+  color: rgb(46, 62, 107);
+  text-decoration: none; /* Ensure no underline */
+  cursor: pointer;
+}
+.aa{
+  margin-top:2vh;
+
+}
+/* Optional: Add hover effect if needed */
+a:hover {
+  text-decoration: underline;
+}
+
   
   /* 🔷 Login Box */
   .login-box {

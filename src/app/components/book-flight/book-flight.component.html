@@ -1,3 +1,8 @@
+<nav class="navbar">
+  <a href="/"><img src="/logo.png" alt="Udaan Mitra Logo" class="navbar-logo">Home</a>
+  <button class="nav-button" (click)="loginAsAdmin()">Admin Login</button>
+</nav>
+
 <div class="book-flight-container">
     <h2>✈️ Book Your Flight</h2>
   
@@ -10,15 +15,8 @@
     
     <div *ngIf="!loading&&!priceloading">
       <div class="flight-details">
-        <h4>Flight Details</h4>
-        <!-- <p><strong>Flight No:</strong> {{ flight.flightNumber }}</p>
-        <p><strong>Airline:</strong> {{ flight.airline }}</p>
-        <p><strong>Departure:</strong> {{ flight.departureTime }}</p>
-        <p><strong>Arrival:</strong> {{ flight.arrivalTime }}</p>
-        <p><strong>Price:</strong> ₹{{ flight.price }}</p>
-        <p><strong>From:</strong> {{ flight.from }}</p>
-        <p><strong>To:</strong> {{ flight.to }}</p>
-        <p><strong>Date:</strong> {{ flight.date }}</p> -->
+       
+       
         
           <h4>Flight Details</h4>
           <p><strong>Flight ID:</strong> {{ flight.flightId }}</p>
@@ -47,6 +45,9 @@
         <div class="form-group">
           <label>Email:</label>
           <input type="email" class="form-control" [(ngModel)]="passenger.email" required>
+          <div *ngIf="showErr"  style="color: red;" >
+            Please enter a valid email address.
+        </div>
         </div>
   
         <!-- <div class="form-group">

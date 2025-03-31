@@ -6,7 +6,6 @@ import { Flight } from '../../models/flight.model';
 import { Router } from '@angular/router';
 import { FlightService } from '../../services/flight.service';
 import { FlightListComponent } from './flight-list/flight-list.component';
-import { forkJoin, map } from 'rxjs';
 import { CityService } from '../../services/city.service';
 import { FareService } from '../../services/fare.service';
 import { City } from '../../models/city.model';
@@ -68,7 +67,9 @@ export class SearchFlightComponent {
       this.selectedFlight.toCity = null;
     }
   }
-  
+  loginAsAdmin() {
+    this.router.navigate(['/admin/login']);
+  }
   onToCityChange() {
     if (this.selectedFlight.toCity) {
       this.fromCities = this.cities.filter(city => city !== this.selectedFlight.toCity);

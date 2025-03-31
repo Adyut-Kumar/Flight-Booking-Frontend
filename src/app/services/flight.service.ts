@@ -35,4 +35,9 @@ export class FlightService {
       
       
     }
+   
+    updateSeats(seatUpdateData: { flightId: number; seatsToBook: number }) {
+      console.log(seatUpdateData);
+      return this.http.put(`${this.apiUrl}/update-seats`, seatUpdateData, { responseType: 'text' as 'json' });
+    }
 }

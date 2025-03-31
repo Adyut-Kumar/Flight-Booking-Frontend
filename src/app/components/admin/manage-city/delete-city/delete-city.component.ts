@@ -24,10 +24,12 @@ export class DeleteCityComponent {
     this.cityService.deleteCityByCode(this.cityCode).subscribe(
       (response) => {
         alert(`City with code ${this.cityCode} deleted successfully!`);
+        const message = response?.body?.message || 'city deleted successfully.'; // ✅ Handle empty body
+        // alert(message);
         this.cityCode = ''; // Clear input field after successful deletion
       },
       (error) => {
-        alert(`Failed to delete city: ${error.error?.message || 'Unknown error'}`);
+        alert(`Failed to delete city: ${error.error?.message || 'check wheather your city code is valid'}`);
       }
     );
   }

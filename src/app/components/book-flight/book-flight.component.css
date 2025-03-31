@@ -1,19 +1,148 @@
 /* ✅ Center the main booking container */
-.book-flight-container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
+
   
   /* ✅ Center the heading and add some spacing */
+
+  
+.navbar {
+  background: hsla(208, 54%, 36%, 0.219); /* Semi-transparent blue */
+  padding: 15px 20px;
+  display: flex;
+  max-width:1000px ;
+  justify-content: space-between;
+  align-items: center;
+   margin:3vh auto;
+  backdrop-filter: blur(5px);
+  border-radius: 50px ;
+}
+.navbar-logo {
+  height: 40px; /* Adjust height as needed */
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar-brand {
+  color: rgb(120, 146, 180);
+  font-size: 22px;
+  font-weight: 600;
+}
+a {
+  all: unset; /* Removes all default styles */
+  color: black;
+  text-decoration: none; /* Ensure no underline */
+  cursor: pointer;
+}
+
+/* Optional: Add hover effect if needed */
+a:hover {
+  /* text-decoration: underline; */
+  color: rgb(77, 75, 75);
+}
+
+.nav-button {
+  /* background: transparent; */
+  color: rgb(14, 15, 17);
+  border: 2px solid white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-button:hover {
+  background: white;
+  color: #007bff;
+}
+/* 
   h2 {
     text-align: center;
     color: #007bff;
     margin-bottom: 20px;
   }
+    /* General Page Styling */
+body {
+  background-image: url('../../../../public/airplane-bg.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+/* Flight Booking Container */
+.book-flight-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Message */
+.loading-message {
+  font-size: 18px;
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* Flight Details */
+.flight-details {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.flight-details h4 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Form Styling */
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+/* Booking Button */
+.book-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #0056b3;
+}
+
   
   /* ✅ Style the loading message */
   .loading-message {
@@ -23,71 +152,6 @@
     animation: fadeIn 1s infinite alternate;
   }
   
-  /* ✅ Flight details section */
-  .flight-details {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .flight-details p {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  .flight-details strong {
-    color: #007bff;
-  }
-  
-  /* ✅ Style the form inputs */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-  }
+ 
   
   /* ✅ Style the booking button */
-  .book-btn {
-    width: 100%;
-    padding: 10px;
-    background: #28a745;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .book-btn:hover {
-    background: #218838;
-  }
-  
-  /* ✅ Success message styling */
-  .success-message {
-    text-align: center;
-    font-size: 18px;
-    color: #28a745;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    background: #e9f6eb;
-  }
-  
-  /* ✅ Fade-in animation for loading text */
-  @keyframes fadeIn {
-    from {
-      opacity: 0.5;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  

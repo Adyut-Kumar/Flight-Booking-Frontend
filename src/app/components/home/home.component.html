@@ -1,9 +1,27 @@
-<div class="container text-center mt-5">
-    <h1>Flight Booking System</h1>
-    <div class="mt-4">
-      <button class="btn btn-primary m-2" (click)="continueAsGuest()">Book Flight</button>
-      <button class="btn btn-secondary m-2" (click)="loginAsAdmin()">Login</button>
-      <button class="btn btn-secondary m-2" (click)="checkIn()">Check In</button>
-    </div>
-  </div>
-  
+   <html>
+   <head>
+
+       <title>Flight Booking System</title>
+       <link rel="stylesheet" href="home.component.css">
+   </head>
+   <body>
+   
+       <!-- Navbar -->
+       <nav class="navbar">
+        <a href="/"><img src="/logo.png" alt="Udaan Mitra Logo" class="navbar-logo"></a>
+        <button class="nav-button" (click)="loginAsAdmin()">Admin Login</button>
+    </nav>
+   
+       <!-- Main Content -->
+       <div class="container">
+           <h1>Eagle Height Fly</h1>
+           <!-- <div class="flight-symbol">✈️</div> -->
+           <div class="button-group">
+               <button class="guest-btn" (click)="continueAsGuest()">Book Flight</button>
+               <button class="checkin-btn" (click)="checkIn()">Check In</button>
+           </div>
+       </div>
+   
+   </body>
+   </html>
+   

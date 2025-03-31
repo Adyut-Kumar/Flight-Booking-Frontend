@@ -16,7 +16,8 @@
   }
   
   .tab-btn {
-    background-color: #abc2db;
+    /* background-color: #3e92eb; */
+    background: #061d35;
     color: white;
     border: none;
     padding: 10px 20px;

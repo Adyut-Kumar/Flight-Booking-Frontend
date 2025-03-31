@@ -1,0 +1,191 @@
+/* General Styling */
+*{
+    padding: 0;
+    margin:0;
+}
+.par-conatainer {
+    /* background: url(../../../../public/airplane-bg.jpg) no-repeat center center fixed; */
+    background-size: cover;
+    margin-top: 3vh;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    margin-top: 0 !important;
+    /* color: #ffffff; */
+}
+.ccn{
+    max-width: 500px;
+    margin: auto;
+}
+.check-in-details{
+    margin:0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+
+    background: hsla(0, 0%, 4%, 0.226); /* Semi-transparent blue */
+    padding: 15px 20px;
+    display: flex;
+    margin:auto;
+   
+    max-width:1000px ;
+    justify-content: space-between;
+    align-items: center;
+    
+    backdrop-filter: blur(5px);
+    border-radius: 50px ;
+}
+.navbar-logo {
+    height: 40px; /* Adjust height as needed */
+    width: auto;
+    margin-right: 10px;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.nav-button {
+    background: transparent;
+    color: rgb(167, 165, 165);
+    border: 1px solid rgb(158, 156, 156);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-button:hover {
+    background: rgba(44, 134, 252, 0.281);
+    color: #080808;
+}
+a{
+    all: unset; /* Resets all styles */
+    color: rgb(170, 168, 168); /* Sets text color to black */
+    cursor: pointer; /* Ensures it still behaves like a link */
+    text-decoration: none; /* Removes underline */ 
+}
+a:hover{
+    color: #494a4b;
+}
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Check-In Container */
+.check-in-container {
+    max-width: 1000px;
+    margin:auto;
+    padding: 20px;
+    /* background: rgba(255, 255, 255, 0.95); */
+    border-radius: 12px;
+    
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.form-group {
+    margin: 10px;
+    padding: auto;
+    text-align: left;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    max-width: 100%;
+    
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Buttons */
+.btn-primary, .btn-success, .btn-info {
+    max-width: 200px;
+    padding: 12px;
+    font-size: 18px;
+    
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #1e7e34;
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #117a8b;
+}
+
+/* Check-In Details */
+.check-in-details {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.check-in-details h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Success Message */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-weight: bold;
+}

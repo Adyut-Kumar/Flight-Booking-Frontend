@@ -23,6 +23,7 @@ export class CheckInComponent {
   checkInDetails: any = null;
   checkInConfirmed: boolean = false;
   isLoading: boolean = false;
+  isget:boolean=false;
   errorMessage: string = '';
   bookingDetails: Booking | null = null;  // ✅ Update to Booking Model
   checkInResults!: CheckInResponse;  // ✅ Update to CheckInResponse Model
@@ -34,17 +35,10 @@ export class CheckInComponent {
       alert("Please enter a reference number.");
       return;
     }
+    this.isget=true;
     
-
-    // Simulated API response
-    // this.checkInDetails = {
-    //   referenceNumber: this.referenceNumber,
-    //   checkInId: 'CHK12345',
-    //   seatNumber: 'A12',
-    //   flight: 'AI-302',
-    //   passenger: { name: 'John Doe', seatNumber: 'A12' }
-    // };
     this.isLoading = true;
+    // this.isGet=false;
     this.errorMessage = '';
 
     this.bookingService.getBookingByReference(this.referenceNumber).subscribe(
@@ -52,16 +46,21 @@ export class CheckInComponent {
         this.bookingDetails = response;
         console.log(this.bookingDetails);
         this.isLoading = false;
+        this.isget=false;
       },
       (error) => {
         this.errorMessage = "Booking not found. Please check your reference number.";
         alert(this.errorMessage);
         this.isLoading = false;
+        this.isget=false;
       }
     );
   }
-
+  loginAsAdmin() {
+    this.router.navigate(['/admin/login']);
+  }
   confirmCheckIn() {
+    this.isLoading=true;
 
     const request: CheckInRequest = {
       referenceNumber: this.referenceNumber,
@@ -74,12 +73,13 @@ export class CheckInComponent {
       (response) => {
         this.checkInResults = response[0];
         this.checkInConfirmed = true;
-         
+        this.isLoading=false;
         console.log('Check-In Successful', response);
       },
       (error) => {
         console.error('Check-In Failed', error);
         console.error('Check-In Failed', error);
+        this.isLoading=false;
       }
     );
 

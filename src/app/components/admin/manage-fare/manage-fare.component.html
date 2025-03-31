@@ -4,13 +4,13 @@
     <!-- Navigation Buttons -->
     <div class="button-container">
       <button class="nav-btn" (click)="showComponent('addFare')">Add Fare</button>
-      <button class="nav-btn" (click)="showComponent('removeFare')">Remove Fare</button>
+      <button class="nav-btn" (click)="showComponent('updateFare')">Update Fare</button>
     </div>
   
     <!-- Dynamic Subcomponents -->
     <div class="sub-container">
       <app-add-fare *ngIf="activeComponent === 'addFare'"></app-add-fare>
-      <app-remove-fare *ngIf="activeComponent === 'removeFare'"></app-remove-fare>
+      <app-update-fare *ngIf="activeComponent === 'updateFare'"></app-update-fare>
     </div>
   </div>
   
