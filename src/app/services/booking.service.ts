@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class BookingService {
   
-  private apiUrl = 'http://localhost:7004/api/Booking';  // ✅ Update with your actual API URL
-
+  private apiUrl = 'http://localhost:7004/api/Booking';
   constructor(private http: HttpClient) {}
 
-  /** ✅ Send Booking Request */
+  /** Send Booking Request */
   bookFlight(bookingData: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/book`, bookingData);
   }

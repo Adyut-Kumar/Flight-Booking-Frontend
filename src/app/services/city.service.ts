@@ -7,11 +7,11 @@ import { City } from '../models/city.model';
   providedIn: 'root'
 })
 export class CityService {
-  private apiUrl = 'http://localhost:7001/api/City';  // ✅ Update with your actual API URL
+  private apiUrl = 'http://localhost:7001/api/City'; 
 
   constructor(private http: HttpClient) {}
  
-  /** ✅ Fetch all cities */
+  /** Fetch all cities */
   getCities(): Observable<City[]> {
     // return this.http.get<City[]>(`${this.apiUrl}/all`);
     return this.http.get<City[]>(`${this.apiUrl}/all`).pipe(
@@ -19,7 +19,7 @@ export class CityService {
     ));
   }
 
-  /** ✅ Fetch a city by ID */
+  /** Fetch a city by ID */
   getCityById(cityId: number): Observable<City> {
     return this.http.get<City>(`${this.apiUrl}/${cityId}`);
   }
@@ -28,7 +28,7 @@ export class CityService {
  
     return this.http.delete(`${this.apiUrl}/deleteCity/${cityCode}`,{ responseType: 'text' as 'json' });
   }
-  /** ✅ Fetch a city by name */
+  /** Fetch a city by name */
   getCityByName(cityName: string): Observable<City> {
     return this.http.get<City>(`${this.apiUrl}/getCityByName/${cityName}`);
   }

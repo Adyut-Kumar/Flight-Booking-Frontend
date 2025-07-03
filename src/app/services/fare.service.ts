@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FareService {
-  private apiUrl = 'http://localhost:7003/api/Fare';  // ✅ Change this based on your backend API
+  private apiUrl = 'http://localhost:7003/api/Fare';
   
 
   constructor(private http: HttpClient) {}
 
-  /** ✅ Get fare details for a flight */
+  /** Get fare details for a flight */
   getFareByFlightId(flightId: number): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/get-fare-by-flight/${flightId}`);
   }
